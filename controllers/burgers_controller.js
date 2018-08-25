@@ -8,7 +8,7 @@ let burger = require("../models/burger");
 //Set up all routes
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        const hbsObject = {
+        let hbsObject = {
             burger: data.filter(function (burger) { return burger.devoured }),
             eatenBurger: data.filter(function (burger) { return !burger.devoured })
         };
@@ -19,16 +19,16 @@ router.get("/", function (req, res) {
 
 router.post("/api/burgers", function (req, res) {
     burger.insertOne([
-        "burger_name", "devoured"
+        "burger_name"
     ], [
-            req.body.burger_name, req.body.devoured
+            req.body.burger_name
         ], function (result) {
             res.json({ id: result.insertId });
         });
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-    const condition = "id = " + req.params.id;
+    let condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 

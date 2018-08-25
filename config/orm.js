@@ -50,8 +50,8 @@ const orm = {
         });
     },
 
-    insertOne: function (table, cols, val, cb) {
-        const queryString = "INSERT INTO " + table;
+    insertOne: function (table, cols, vals, cb) {
+        let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -59,7 +59,7 @@ const orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
-
+        console.log(vals);
         console.log(queryString);
 
         connection.query(queryString, vals, function (err, result) {
@@ -71,7 +71,7 @@ const orm = {
     },
 
     updateOne: function (table, objColVals, condition, cb) {
-        const queryString = "UPDATE " + table;
+        let queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColVals);

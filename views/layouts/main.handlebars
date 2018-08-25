@@ -12,6 +12,31 @@
 
 <body>
     {{{ body }}}
+
+    <script>
+        $(function () {
+            if ($("#addBurger").val !== "") {
+                $("#submit").on("click", function (event) {
+                    event.preventDefault();
+
+                    let newBurger = {
+                        burger_name: $("#addBurger").val().trim(),
+                        devoured: $(".btn").val().trim()
+                    };
+                    $.ajax("/api/burgers/", {
+                        type: "POST",
+                        data: newBurger
+                    }).then(
+                        function () {
+                            console.log("created new Burger");
+                            location.reload();
+                        }
+                    );
+                });
+            };
+        });
+
+    </script>
 </body>
 
 </html>

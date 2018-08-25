@@ -1,2 +1,39 @@
-ul { list-style-type: none; }
-body {background-color: green;}
+
+h1 {
+    text-align: center;
+}
+
+ul { 
+    list-style-type: none;
+    display: inline-block;
+}
+
+body {
+    background-color: rgba(255, 230, 0, 0.521);
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container {
+    margin: 0px 300px;
+}
+
+.eaten {
+  float: right;
+}
+
+.notEaten {
+    position: relative;
+    margin: 20px 50px;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
