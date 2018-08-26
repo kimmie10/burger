@@ -15,13 +15,35 @@
 
     <script>
         $(function () {
+            $(".btn").on("click", function (event) {
+
+                event.preventDefault();
+
+                let id = $(this).data("id");
+                console.log(id);
+                console.log(this);
+
+                let newState = {
+                    devoured: 0
+                };
+                $.ajax("/api/burgers/" + id, {
+                    type: "PUT",
+                    data: newState
+                }).then(
+                    function () {
+                        console.log("Was that a good burger?")
+                        location.reload();
+                    }
+                );
+            });
+
             if ($("#addBurger").val !== "") {
                 $("#submit").on("click", function (event) {
                     event.preventDefault();
 
                     let newBurger = {
                         burger_name: $("#addBurger").val().trim(),
-                        devoured: $(".btn").val().trim()
+                        devoured: $(".btn").val()
                     };
                     $.ajax("/api/burgers/", {
                         type: "POST",

@@ -1,7 +1,7 @@
 //Dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
+
 
 //Set the port of app
 const PORT = process.env.PORT || 8080;
@@ -23,6 +23,7 @@ const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
 
 //Import routes and give access to server
 const routes = require("./controllers/burgers_controller");
