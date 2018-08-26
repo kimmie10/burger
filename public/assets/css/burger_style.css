@@ -19,21 +19,36 @@ img {
     margin-right: auto;
 }
 
-#container {
-    margin: 0px 300px;
+#container {   
+    text-align: center;
 }
 
 .eaten {
-  float: right;
+ text-align: left;
 }
 
 .notEaten {
     position: relative;
     margin: 20px 50px;
+    text-align: left;
 }
 
 textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+#submit {
+ margin: 0, auto;
+ margin-top: 10px;
+}
+
+.btn {
+    margin: 10px;
+    text-align: right;
 }

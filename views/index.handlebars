@@ -1,7 +1,7 @@
 {{!-- * Setup the `index.handlebars` to have the template that Handlebars can render onto. * Create a button in `index.handlebars`
 that will submit the user input into the database. --}}
 
-<img src="assets/img/burger.png" alt="Burger" height="50" width="50">
+<img src="assets/img/burger.png" alt="Burger" height="150" width="150">
 
 <h1>Eat Lots of Burgers!</h1>
 <div id="container">
@@ -17,7 +17,8 @@ that will submit the user input into the database. --}}
         <li>{{id}} {{burger_name}}</li>
         {{/each}}
     </ul>
-
-    <textarea name="Add a Burger" id="addBurger" cols="50" rows="4"></textarea>
-    <button id="submit" type="submit">Add a Burger</button>
+    <div class="wrapper">
+        <textarea name="Add a Burger" id="addBurger" cols="50" rows="4"></textarea>
+        <button id="submit" type="submit">Add a Burger</button>
+    </div>
 </div>
